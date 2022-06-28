@@ -20,13 +20,28 @@
     //          return computerResult = "Scissors";
     //         }
 
-    let options = ["Rock", "Paper", "Scissors"];
-    let choice = options[Math.floor(Math.random()*options.length)];
-     return choice;
-    } 
-    console.log(computerPlay());
+    let computerOptions = ['Rock', 'Paper', 'Scissors'];
+    let computerChoice = computerOptions[Math.floor(Math.random()*computerOptions.length)];
+     return computerChoice;
+} 
+   
+    function playerSelection(choice) {
+        let inputInsensitive = choice.toLowerCase();
+        if (inputInsensitive == 'rock') {
+            return inputInsensitive = 'Rock';
+        }
+        else if (inputInsensitive == 'paper') {
+            return inputInsensitive = 'Paper';
+        }
+        else if (inputInsensitive == 'scissors') {
+            return inputInsensitive = 'Scissors';
+        }
+        else {
+            return 'Error, you must introduce: Rock, Paper or Scissors';
+        }
+    }
 
-    
+
 </script>
 </body>
 </html>
