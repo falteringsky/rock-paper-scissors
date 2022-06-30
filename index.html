@@ -25,8 +25,8 @@
      return computerChoice;
     } 
 
-    let choice = prompt('Rock, paper or scissors?');
     function playerSelection() {
+      const choice = prompt('Rock, paper or scissors?');
         let inputInsensitive = choice.toLowerCase();
         if (inputInsensitive == 'rock') {
             return inputInsensitive = 'Rock';
@@ -38,12 +38,14 @@
             return inputInsensitive = 'Scissors';
         }
         else {
-            alert (wrongInput = 'Error, you must introduce: Rock, Paper or Scissors');
+            return (wrongInput = 'Error, you must introduce: Rock, Paper or Scissors');
         }
     }
 
     let playerChoice = playerSelection();
     let computerChoice = computerPlay();
+    let winCounter = 0;
+    let loseCounter = 0;
 
     function playRound(playerChoice, computerChoice) {
      while (playerChoice != 'Error, you must introduce: Rock, Paper or Scissors') {
@@ -51,55 +53,45 @@
           return draw = 'Draw! No one wins.';
       }
       else if (playerChoice == 'Rock' && computerChoice =='Scissors') {
-          return winner = 'You win! Rock beats scissors';
+          winCounter++;
+          return winner = `You win! Rock beats scissors Player score: ${winCounter} Computer score: ${loseCounter}`;
     }
       else if (playerChoice == 'Rock' && computerChoice =='Paper') {
-        return winner = 'You lose! Paper beats rock';
+          loseCounter++;
+        return winner = `You lose! Paper beats rock Player score: ${winCounter} Computer score: ${loseCounter}`;
       }
       else if (playerChoice == 'Paper' && computerChoice =='Rock') {
-        return winner = 'You win! Paper beats rock';
+          winCounter++;
+        return winner = `You win! Paper beats rock Player score: ${winCounter} Computer score: ${loseCounter}`;
       }
       else if (playerChoice == 'Paper' && computerChoice =='Scissors') {
-        return winner = 'You lose! Scissors beats paper';
+        loseCounter++;
+        return winner = `You lose! Scissors beats paper Player score: ${winCounter} Computer score: ${loseCounter}`;
       }
       else if (playerChoice == 'Scissors' && computerChoice =='Paper') {
-        return winner = 'You win! Scissors beats paper';
+        winCounter++;
+        return winner = `You win! Scissors beats paper Player score: ${winCounter} Computer score: ${loseCounter}`;
       }
       else  {
-        return winner = 'You lose! Rock beats scissors';
+        loseCounter++;
+        return winner = `You lose! Rock beats scissors Player score: ${winCounter} Computer score: ${loseCounter}`;
        }
      }
     }
-    // console.log(playRound(playerChoice, computerChoice));
     let outcome = playRound(playerChoice, computerChoice);
-    let winCounter = 0;
-    let loseCounter = 0;
-    function game() {
-        let result = '';
-        if (outcome == 'You win! Scissors beats paper' || 'You win! Paper beats rock' || 'You win! Rock beats scissors') {
-                winCounter += 1
-                return result = (`${outcome}  Player score: ${winCounter} Computer score: ${loseCounter}`)
 
-                    if (winCounter == 5) {
-                    return result += '<br><br>You won the game! Reload the page to play again';
-                    disableButtons()
-                    }
-        }
-        else if (outcome == 'Draw! No one wins.') {
-                return result = (`${outcome} Player score: ${winCounter} Computer score: ${loseCounter}`)
-        }
-        else {
-                loseCounter += 1
-                return result = (`${outcome} Player score: ${winCounter} Computer score: ${loseCounter}`)
-
-                    if (loseCounter == 5) {
-                    return result += `<br><br>I won the game, a computer has better odds than you! Reload the page to play again`
-                    disableButtons()
-                    }
-        }
+    var i = 0;
+    const gamePlay = () => {
+    console.log(outcome);
+    i++;
+    if (i !== 5) {
+        gamePlay();
+    } else {
+        alert(`Game Over=> User ${winCounter} vs Computer ${loseCounter}`);
     }
+}
 
- console.log(game());
+gamePlay();
 
 </script>
 <div id="result"></div>
