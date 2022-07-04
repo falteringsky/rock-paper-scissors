@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function computerPlay() {
+    //   let computerResult = Math.random();
+    //      if (computerResult <= 0.34) {
+    //         return computerResult = "Rock";
+    //         } 
+    //      else if (computerResult <= 0.67) {
+    //          return computerResult = "Paper";
+    //         } 
+    //      else {
+    //          return computerResult = "Scissors";
+    //         }
+
+    let computerOptions = ['Rock', 'Paper', 'Scissors'];
+    let computerChoice = computerOptions[Math.floor(Math.random()*computerOptions.length)];
+     return computerChoice;
+    } 
+
+    function playerSelection() {
+      const choice = prompt('Rock, paper or scissors?');
+        let inputInsensitive = choice.toLowerCase();
+        if (inputInsensitive == 'rock') {
+            return inputInsensitive = 'Rock';
+        }
+        else if (inputInsensitive == 'paper') {
+            return inputInsensitive = 'Paper';
+        }
+        else if (inputInsensitive == 'scissors') {
+            return inputInsensitive = 'Scissors';
+        }
+        else {
+            return (wrongInput = 'Error, you must introduce: Rock, Paper or Scissors');
+        }
+    }
+
+    let playerChoice = playerSelection();
+    let computerChoice = computerPlay();
+    let winCounter = 0;
+    let loseCounter = 0;
+
+    function playRound(playerChoice, computerChoice) {
+     while (playerChoice != 'Error, you must introduce: Rock, Paper or Scissors') {
+        if (playerChoice == computerChoice) {
+          return draw = 'Draw! No one wins.';
+      }
+      else if (playerChoice == 'Rock' && computerChoice =='Scissors') {
+          winCounter++;
+          return winner = `You win! Rock beats scissors Player score: ${winCounter} Computer score: ${loseCounter}`;
+    }
+      else if (playerChoice == 'Rock' && computerChoice =='Paper') {
+          loseCounter++;
+        return winner = `You lose! Paper beats rock Player score: ${winCounter} Computer score: ${loseCounter}`;
+      }
+      else if (playerChoice == 'Paper' && computerChoice =='Rock') {
+          winCounter++;
+        return winner = `You win! Paper beats rock Player score: ${winCounter} Computer score: ${loseCounter}`;
+      }
+      else if (playerChoice == 'Paper' && computerChoice =='Scissors') {
+        loseCounter++;
+        return winner = `You lose! Scissors beats paper Player score: ${winCounter} Computer score: ${loseCounter}`;
+      }
+      else if (playerChoice == 'Scissors' && computerChoice =='Paper') {
+        winCounter++;
+        return winner = `You win! Scissors beats paper Player score: ${winCounter} Computer score: ${loseCounter}`;
+      }
+      else  {
+        loseCounter++;
+        return winner = `You lose! Rock beats scissors Player score: ${winCounter} Computer score: ${loseCounter}`;
+       }
+     }
+    }
+    let outcome = playRound(playerChoice, computerChoice);
+
+    var i = 0;
+    const gamePlay = () => {
+    console.log(outcome);
+    i++;
+    if (i !== 5) {
+        gamePlay();
+    } else {
+        alert(`Game Over=> User ${winCounter} vs Computer ${loseCounter}`);
+    }
+}
+
+gamePlay();
+
+</script>
+<div id="result"></div>
+</body>
+</html>
