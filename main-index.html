@@ -6,33 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, paper and scissors</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </head>
-<body>
+<body class="body">
     <div id="header">Rock, Paper & Scissors</div>
-    
-    <div class="move">Your move?</div>
 
-    <div id="score">
-        <div class="rounds">Rounds left: 5</div>
+    <div class="score">
         <div class="playerScore">
-            <h2>Player</h2>
+            <h2 class="nameTags">Player</h2>
             <p class="p-count">0</p>
         </div>
         <div class="computerScore">
-            <h2>AI</h2>
+            <h2 class="nameTags">AI</h2>
             <p class="c-count">0</p>
         </div>
     </div>
 
-    <div id="buttons">
-        <button class="but but-rock">Rock</button>
-        <button class="but but-paper">Paper</button>
-        <button class="but but-scissors">Scissors</button>
+    <div class="move"><h1 class="cyberpunk">Your move?</h1></div>
+    <div class="rounds"><h1 class="cyberpunk glitched">Moves Left: 5</h1></div>
+    <hr />
+
+    <div class="buttons">
+        <button class="but-rock">
+            <span class="btn__content">Rock</span>
+            <span class="btn__glitch"></span>
+            <span class="btn__label">r25</span>
+        </button>
+        <button class="but-paper">
+            <span class="btn__content">Paper</span>
+            <span class="btn__glitch"></span>
+            <span class="btn__label">r25</span>
+        </button>
+        <button class="but-scissors">
+            <span class="btn__content">Scissors</span>
+            <span class="btn__glitch"></span>
+            <span class="btn__label">r25</span>
+        </button>
     </div>
 
     <div class="final-results"></div>
     <div id="footer"></div>
     <button class="reload-page"></button>
+
+    <script src="main.js"></script>
 </body>
 </html>

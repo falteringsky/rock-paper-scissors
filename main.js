@@ -1,7 +1,6 @@
-
 /*Computer random function*/
 function computerRandom() {
-    const compArray = ['Rock', 'Paper', 'Scissors'];
+    const compArray = ['rock', 'paper', 'scissors'];
     const randomChoice = compArray[Math.floor(Math.random()*compArray.length)];
     return randomChoice;
 }
@@ -16,6 +15,7 @@ const game = () => {
   
     // Function to
     const playGame = () => {
+      // const options = document.querySelector('#buttons');
       const rockBtn = document.querySelector('.but-rock');
       const paperBtn = document.querySelector('.but-paper');
       const scissorBtn = document.querySelector('.but-scissors');
@@ -23,7 +23,7 @@ const game = () => {
       
       // Function to start playing game
       playerOptions.forEach(option => {
-        option.addEventListener('click',function(){
+        option.addEventListener('click', function() {
   
           const movesLeft = document.querySelector('.rounds');
           moves++;
