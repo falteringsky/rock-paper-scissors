@@ -9,44 +9,61 @@
     <!-- <script src="main.js"></script> -->
 </head>
 <body class="body">
+<main>
     <div id="header">Rock, Paper & Scissors</div>
 
-    <div class="score">
-        <div class="playerScore">
-            <h2 class="nameTags">Player</h2>
-            <p class="p-count">0</p>
+    <section class="cyber">
+        <div class="score">
+            <div class="playerScore">
+                <h2 class="nameTags">Player</h2>
+                <p class="p-count">0</p>
+            </div>
+            <div class="computerScore">
+                <h2 class="nameTags">AI</h2>
+                <p class="c-count">0</p>
+            </div>
         </div>
-        <div class="computerScore">
-            <h2 class="nameTags">AI</h2>
-            <p class="c-count">0</p>
-        </div>
-    </div>
+    </section>
 
-    <div class="move"><h1 class="cyberpunk">Your move?</h1></div>
-    <div class="rounds"><h1 class="cyberpunk glitched">Moves Left: 5</h1></div>
-    <hr />
+    <section class="cyber black">
+        <div class="move"><h1 class="cyberpunk">YOUR MOVE?</h1></div>
+        <div class="rounds"><h1 class="cyberpunk glitched">Moves Left: 5</h1></div>
+        <hr />
+    </section>
 
+    <section class="cyber">
     <div class="buttons">
         <button class="but-rock">
-            <span class="btn__content">Rock</span>
+            <span class="btn__content btn-ro">Rock</span>
             <span class="btn__glitch"></span>
             <span class="btn__label">r25</span>
         </button>
         <button class="but-paper">
-            <span class="btn__content">Paper</span>
+            <span class="btn__content btn-pap">Paper</span>
             <span class="btn__glitch"></span>
             <span class="btn__label">r25</span>
         </button>
         <button class="but-scissors">
-            <span class="btn__content">Scissors</span>
+            <span class="btn__content btn-sci">Scissors</span>
             <span class="btn__glitch"></span>
             <span class="btn__label">r25</span>
         </button>
     </div>
-
-    <div class="final-results"></div>
-    <div id="footer"></div>
-    <button class="reload-page"></button>
+    </section>
+    
+    <section class="cyber black">
+        <div id="footer">
+            <div>CREATED BY: FALTERINGSKY</div>
+            <div class="credit">Background image by: CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A. © 2022 CD PROJEKT S.A. All rights reserved. 
+                All other copyrights and trademarks are the property of their respective owners.
+            </div>
+        </div>
+    </section>
+</main>
+    <div id="end-alert" class="disappear">
+        <div class="final-results"></div>
+        <button class="reload-page"></button>
+    </div>
 
     <script src="main.js"></script>
 </body>

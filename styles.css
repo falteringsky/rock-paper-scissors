@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 
+@font-face {
+  font-family: 'Cyberpunk-logo';
+  src: url(./fonts/Cyberpunk.ttf);
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -10,56 +15,74 @@
 }
 
 #header {
-    /* position: fixed; */
-    font-family:  Tomorrow, sans-serif;
+    font-family:  'Cyberpunk-logo', sans-serif;
     font-style: italic;
     height: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+     background-color: black;
     font-size: 65px;
     font-weight: 600;
-    text-shadow: 0 0 3vw #F4BD0A;
-    animation: neon 2s ease-in-out infinite;
-  }
+    color: yellow;
+    text-shadow: rgb(0, 208, 255) 2px 3px 0px;
+
+}
+
+#footer {
+  color: yellow;
+}
+.credit {
+  font-size: 10px;
+  font-style: italic;
+}
   
-
-@keyframes neon {
-    0%, 100% {
-      text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
-      color: #FFFC00;
-    }
-    50% {
-      text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
-      color: #806914;
-    }
-  }
-
+/* PLayer and AI score start */
 .score {
     height: 300px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border: 30px solid;
+    border-left: 5px solid;
+    border-right: 5px solid;
+    border-bottom: 15px solid;
+    clip-path: (calc(22% + 28px) -1px, calc(22% + 45px) 15px, 34% 15px, calc(34% + 15px) -1px, 70% 0px)
 }
 
 .playerScore, .computerScore {
+  width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 50px;
+    border: 30px solid #000;
+    border-left: 5px solid #000;
+    border-right: 5px solid #000;
+    border-bottom: 15px solid #000;
+    clip-path: polygon(0px 25px, 26px 0px, calc(60% - 25px) 0px, 60% 25px, 100% 25px, 100% calc(100% - 10px), calc(100% - 15px) calc(100% - 10px), calc(80% - 10px)  calc(100% - 10px), calc(80% - 15px) calc(100% - 0px), 10px  calc(100% - 0px), 0% calc(100% - 10px));
+    background-color: #000;
 }
 
 .nameTags {
     font-size: 50px;
     font-weight: bold;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 208, 255);
 }
 
 .c-count, .p-count {
+  font-family: Tomorrow, sans-serif;
     font-size: 45px;
     font-weight: 700;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 208, 255);
 }
+/* PLayer and AI score end */
+
 
 .move, .rounds {
     /* display: block;
@@ -68,9 +91,9 @@
     font-size: 60px;
     font-weight: 400;
  */
- background-color: var(--yellow-color);
+ /* background-color: var(--yellow-color); */
  padding: 30px;
- font-family: "Advent Pro", arial ;
+ font-family: 'Tommorrow', arial ;
  font-size: 2rem;
  line-height: 2.2rem;
  font-weight: 200;
@@ -88,7 +111,7 @@
  --purple-color: purple;
 }
 
-/* Titles */
+/* Titles start*/
 
 h1.cyberpunk {
   font-size: 2rem;
@@ -96,6 +119,7 @@ h1.cyberpunk {
   font-weight: 200;
   position: relative;
   padding-bottom: 15px;
+  color: var(--yellow-color);
 }
 
 
@@ -107,11 +131,12 @@ h1.cyberpunk:before {
     left: 2px;
     width: 100%;
     height: 10px;
-    background-color: #000;
+    background-color: var(--yellow-color);
     clip-path: polygon(0px 0px, 85px 0px, 90px 5px, 100% 5px, 100% 6px, 85px 6px, 80px 10px, 0px 10px);
 }
 
 h1.cyberpunk.glitched {
+  font-size: 1.5rem;
   animation-name: h1glitched;
   animation-duration: calc(var(--glitched-duration) * 1.4);
   animation-iteration-count: infinite;
@@ -221,12 +246,14 @@ p.cyberpunk:after {
     opacity: 1;
   }
 }
+/* Titles end */
 
-/* Separator */
+
+/* Separator start*/
 
 hr {
   height: 14px;
-  background-color: #000;
+  background-color: var(--yellow-color);
   width: 100%;
   clip-path: polygon(1px 0px, 0px 0px, 0px 0px, 8px 14px, 13px 14px, 22px 7px, 42px 6px, 49px 2px, 100% 2px, 100% 0px, 42px 0px, 35px 5px, 22px 6px, 13px 13px, 9px 13px);
   animation-name: hr;
@@ -255,8 +282,9 @@ hr {
     right: 35px;
   }
 }
+/* Separator end */
 
-/* Scrollbar */
+/* Scrollbar start*/
 
 ::-webkit-scrollbar {
   background-color: var(--yellow-color);
@@ -271,13 +299,13 @@ hr {
   display: none;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--red-color);
+  background-color: red;
   border-bottom: 2px solid var(--border-color);
   border-right: 2px solid var(--border-color);
   transition: background var(--glitched-duration);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--orange-color);
+  background-color: orange;
 }
 ::-webkit-scrollbar-corner {
   display: none;
@@ -285,10 +313,14 @@ hr {
 ::-webkit-resizer {
   display: none;
 }
+/* Scrollbar end */
+
 
 .rounds, .move {
     text-align: center;
 }
+
+/* Buttons start */
 
 .buttons {
     height: 300px;
@@ -328,7 +360,7 @@ hr {
     left: 2px;
     right: 2px;
     bottom: 2px;
-    background-color: var(--yellow-color);
+    background-color: var(--red-color);
     clip-path: polygon(92% 0, 100% 25%, 100% 100%, 8% 100%, 0% 75%, 0 0);
   }
 
@@ -379,7 +411,7 @@ animation: glitch-animation 2s linear 0s infinite;
   animation: glitch-animation 2s linear 0s infinite;
     }
 
-/* secret trick */
+/* Glitch animation for buttons */
 @keyframes glitch-animation {
     0% {
       opacity: 1;
@@ -490,5 +522,78 @@ animation: glitch-animation 2s linear 0s infinite;
     to {
       clip-path: polygon(0 0, 0 0, 0 0, 0 0);
       opacity: 1;
+    }
+  }
+  /* Buttons end */
+
+  /*Sections start*/
+
+  section.cyber {
+    background-color: var(--yellow-color);
+    color: #000;
+    padding: 60px 60px;
+    position: relative;
+      margin-top: -1px;
+    margin-bottom: -1px;
+  }
+  section.cyber:after,
+  section.cyber.black:after {
+    content: " ";
+    display: block;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+    background-color: #000;
+    position: absolute;
+    clip-path: polygon(0% 0%, 22% 0%, calc(22% + 30px) 30px, 52% 30px, calc(52% + 15px) 15px, 70% 15px, calc(70% + 15px) 30px, 90% 30px, calc(90% + 30px) 0px, 100% 0px, 100% 30px, 0px 30px);
+  }
+  
+  section.cyber.black:after {
+    background-color: var(--yellow-color);
+  }
+  
+  section.cyber.black {
+    background-color: #000;
+    color: var(--yellow-color);
+  }
+  
+  section.cyber:before,
+  section.cyber.black:before {
+    content: " ";
+    display: block;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+    background-color: var(--yellow-color);
+    position: absolute;
+    clip-path: polygon(calc(22% + 28px) -1px, calc(22% + 45px) 15px, 34% 15px, calc(34% + 15px) -1px, 70% 0px)
+  }
+  
+  section.cyber:before {
+    background-color: #000;
+  }
+/* Sections end */
+
+#end-alert {
+  background-color: #000;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.reload-page {
+
+}
+  /*Mobile*/
+  @media (prefers-reduced-motion: reduce) {
+    .btn:hover .btn__glitch,
+    .btn:hover .btn__content::after,
+    .btn:focus .btn__glitch,
+    .btn:focus .btn__content::after {
+      display: none;
+      animation: none;
     }
   }

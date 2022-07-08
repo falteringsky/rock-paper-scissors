@@ -5,6 +5,10 @@ function computerRandom() {
     return randomChoice;
 }
 
+const endAlrt = document.querySelector('#end-alert');
+const result = document.querySelector('.final-results');
+const reloadBtn = document.querySelector('.reload-page');
+const main = document.querySelector('main');
 
 // Complete logic of game inside this function
 const game = () => {
@@ -16,16 +20,16 @@ const game = () => {
     // Function to
     const playGame = () => {
       // const options = document.querySelector('#buttons');
-      const rockBtn = document.querySelector('.but-rock');
-      const paperBtn = document.querySelector('.but-paper');
-      const scissorBtn = document.querySelector('.but-scissors');
+      const rockBtn = document.querySelector('.btn-ro');
+      const paperBtn = document.querySelector('.btn-pap');
+      const scissorBtn = document.querySelector('.btn-sci');
       const playerOptions = [rockBtn,paperBtn,scissorBtn];
       
       // Function to start playing game
       playerOptions.forEach(option => {
         option.addEventListener('click', function() {
   
-          const movesLeft = document.querySelector('.rounds');
+          const movesLeft = document.querySelector('h1.cyberpunk.glitched');
           moves++;
           movesLeft.innerText = `Moves Left: ${5-moves}`;
           
@@ -109,16 +113,19 @@ const game = () => {
       if(playerScore > computerScore){
         result.style.fontSize = '2rem';
         result.innerText = 'You Won The Game!'
+        hideEndContainerShowWinner();
         result.style.color = '#308D46';
       }
       else if(playerScore < computerScore){
         result.style.fontSize = '2rem';
         result.innerText = 'You Lost The Game!';
+        hideEndContainerShowWinner();
         result.style.color = 'red';
       }
       else{
         result.style.fontSize = '2rem';
         result.innerText = 'Tie!';
+        hideEndContainerShowWinner();
         result.style.color = 'grey'
       }
       reloadBtn.innerText = 'Restart';
@@ -126,7 +133,15 @@ const game = () => {
       reloadBtn.addEventListener('click',() => {
         window.location.reload();
       })
+
     }
+    function hideEndContainerShowWinner() {
+      main.style.opacity = 0;
+      main.style.transform = 'scale(0)';
+      // Add timeout with length matching animation-duration 
+      main.style.display = 'none';
+      result.style.display = 'flex';
+  }
   
   
     // Calling playGame function inside game
