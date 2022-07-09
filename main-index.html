@@ -7,8 +7,16 @@
     <title>Rock, paper and scissors</title>
     <link rel="stylesheet" href="styles.css">
     <!-- <script src="main.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="pace.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 </head>
 <body class="body">
+<div id="preloader">
+    <div class="p">LOADING</div>
+</div>
+
 <main>
     <div id="header">Rock, Paper & Scissors</div>
 
@@ -53,7 +61,7 @@
     
     <section class="cyber black">
         <div id="footer">
-            <div>CREATED BY: FALTERINGSKY</div>
+            <div>DESIGNED BY: FALTERINGSKY</div>
             <div class="credit">Background image by: CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A. © 2022 CD PROJEKT S.A. All rights reserved. 
                 All other copyrights and trademarks are the property of their respective owners.
             </div>
@@ -65,6 +73,31 @@
         <button class="reload-page"></button>
     </div>
 
+    <!-- Loading bar start-->
+    <script>
+    paceOptions = {
+        ajax: true,
+        document: true,
+        eventLag: false
+        };
+
+        Pace.on('done', function() {
+        $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+
+
+        $('#preloader').delay(1500).animate({top: '-100%'}, 2000, $.bez([0.19,1,0.22,1]));
+
+        TweenMax.from("main", 2, {
+             delay: 1.8,
+                  y: 10,
+                  opacity: 0,
+                  ease: Expo.easeInOut
+            })
+       }); 
+    </script>
+    <!--LOading bar end-->
+
     <script src="main.js"></script>
+
 </body>
 </html>

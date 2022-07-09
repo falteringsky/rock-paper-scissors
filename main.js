@@ -111,25 +111,25 @@ const game = () => {
       movesLeft.style.display = 'none';
   
       if(playerScore > computerScore){
-        result.style.fontSize = '2rem';
-        result.innerText = 'You Won The Game!'
+        result.style.fontSize = '80px';
+        result.innerText = 'Status: YOUR HUMAN PSYCHE HAS BEEN SUCCESFULLY TRANSFERRED.'
         hideEndContainerShowWinner();
         result.style.color = '#308D46';
       }
       else if(playerScore < computerScore){
-        result.style.fontSize = '2rem';
-        result.innerText = 'You Lost The Game!';
+        result.style.fontSize = '80px';
+        result.innerText = 'Status: FLATLINED..';
         hideEndContainerShowWinner();
         result.style.color = 'red';
       }
       else{
-        result.style.fontSize = '2rem';
-        result.innerText = 'Tie!';
+        result.style.fontSize = '80px';
+        result.innerText = 'Status: IN STANDBY, NO RESULT..';
         hideEndContainerShowWinner();
-        result.style.color = 'grey'
+        result.style.color = 'rgb(0, 208, 255)'
       }
-      reloadBtn.innerText = 'Restart';
-      reloadBtn.style.display = 'flex'
+      reloadBtn.innerText = 'RESTART_';
+      reloadBtn.style.display = 'block';
       reloadBtn.addEventListener('click',() => {
         window.location.reload();
       })

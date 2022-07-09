@@ -14,6 +14,64 @@
     background-image: url(./images/cyberpunk-back.jpg);
 }
 
+/*Loading bar start*/
+.pace {
+  pointer-events: none;
+  user-select: none;
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  border: 0px;
+  height: 1px;
+  overflow: hidden;
+  background: #1b1b1b;
+}
+
+.pace .pace-progress {
+  box-sizing: border-box;
+  transform: translate3d(0, 0, 0);
+  max-width: 400px;
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  width: 100%;
+  background: #ff003c;
+}
+
+.pace.pace-inactive {
+  display: none;
+}
+
+#preloader{
+  width:100%;
+  height:100vh;
+  background-image: url(./images/red-blackPreloader.jpg);
+  overflow:hidden;
+  position:fixed;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.p {
+  font-size: 35px;
+  text-shadow: black 3px 4px 0px;
+  font-family: 'Tomorrow', sans-serif;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ff003c;
+}
+/*Loading bar end */
+
 #header {
     font-family:  'Cyberpunk-logo', sans-serif;
     font-style: italic;
@@ -578,14 +636,38 @@ animation: glitch-animation 2s linear 0s infinite;
 
 #end-alert {
   background-color: #000;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  text-align: center;
+}
+
+.final-results {
+  font-family: 'Tomorrow', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .reload-page {
-
+  display: none;
+  text-align: center;
+  --primary: hsl(var(--primary-hue), 85%, calc(var(--primary-lightness, 50) * 1%));
+  --shadow-primary: hsl(var(--shadow-primary-hue), 90%, 50%);
+  --primary-hue: 0;
+  --primary-lightness: 50;
+  --color: hsl(0, 0%, 100%);
+  --font-size: 26px;
+  --shadow-primary-hue: 180;
+  font-family: 'Tomorrow', sans-serif;
+  color: var(--color);
+  text-transform: uppercase;
+  background: var(--primary);
+  font-size: var(--font-size);
+  outline: transparent;
+  letter-spacing: 2px;
+  font-weight: 700;
+  border: 0;
+  min-width: 300px;
+  padding: 32px 64px;
+  box-shadow: inset -3px 0 0 var(--shadow-primary);
 }
   /*Mobile*/
   @media (prefers-reduced-motion: reduce) {
